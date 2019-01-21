@@ -1,0 +1,51 @@
+.section {
+  background-color: $aqua-haze;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  &__header {
+    background: linear-gradient(to right, rgba($portage, 1) 0%, rgba($heliotrope, 1) 100%);
+    padding: 15px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__header-text {
+    padding: 0 15px;
+  }
+
+  &__icon {
+    fill: $white;
+    font-size: rem(24);
+  }
+
+  &__photo {
+    border-radius: 50%;
+    height: 28px;
+    overflow: hidden;
+    width: 28px;
+    margin-left: auto;
+  }
+
+  &__title {
+    color: $white;
+    font-size: rem(14);
+    font-weight: fw("medium");
+    letter-spacing: ls(14, 40);
+  }
+
+  &__subtitle {
+    color: $white;
+    font-size: rem(12);
+  }
+
+  &__content {
+    height: 100%;
+  }
+
+  &__footer {
+    margin-top: auto;
+    padding: 15px;
+  }
+}

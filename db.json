@@ -1,0 +1,23 @@
+{
+  "quote": [
+    {
+      "id": 12345678000123,
+      "cnpj": "12345678/000123",
+      "email": "bruno@email.com",
+      "password": "bruno"
+    },
+    {
+      "id": 87654321321000,
+      "cnpj": "87654321/321000",
+      "email": "nilson@email.com",
+      "password": "nilson"
+    }
+  ],
+  "users": [
+    {
+      "id": "0980",
+      "name": "Jennifer Fritz",
+      "photo": "https://randomuser.me/api/portraits/women/8.jpg"
+    }
+  ]
+}

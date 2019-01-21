@@ -1,0 +1,8 @@
+@function rem($px-value) {
+  // Return warning message if layer passed not exists
+  @if not ($base-font) {
+    @warn "No base font variable found.";
+  }
+
+  @return ($px-value / $base-font) + rem;
+}

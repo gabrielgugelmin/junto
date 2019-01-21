@@ -1,0 +1,25 @@
+.button {
+  background-color: $iron;
+  color: $black;
+  display: flex;
+  font-size: rem(12);
+  font-weight: fw("medium");
+  justify-content: space-between;
+  padding: 21px 15px;
+  text-decoration: none;
+  width: 100%;
+
+  @include media(">=tablet") {
+    width: auto;
+  }
+
+  &--white {
+    background-color: $white;
+    color: $heliotrope;
+  }
+
+  &--green {
+    background-color: $turquoise;
+    color: $white;
+  }
+}

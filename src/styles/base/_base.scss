@@ -1,0 +1,54 @@
+//-------------------------------
+// Estilos base
+//-------------------------------
+
+// Document
+html,
+body {
+  background-color: $white;
+  font: {
+    family: $font;
+    size: 16px;
+    weight: fw("regular");
+  }
+  height: 100%;
+  position: relative;
+}
+
+// Heading
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font;
+  font-weight: fw("bold");
+}
+
+// Anchors
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+// Buttons
+button {
+  background-color: transparent;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  text-align: left;
+}
+
+p {
+  margin: 0;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}

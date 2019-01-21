@@ -1,0 +1,23 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "bruno",
+      "email": "bruno@email.com",
+      "password": "bruno"
+    },
+    {
+      "id": 2,
+      "name": "nilson",
+      "email": "nilson@email.com",
+      "password": "nilson"
+    }
+  ],
+  "quote": [
+    {
+      "id": 80,
+      "cnpj": "12345678/000123",
+      "photo": "https://randomuser.me/api/portraits/women/8.jpg"
+    }
+  ]
+}

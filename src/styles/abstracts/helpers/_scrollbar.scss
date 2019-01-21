@@ -1,0 +1,27 @@
+//
+// Scrollbar @mixin
+// Add style to scrollbars
+//
+// Reference:
+// #
+//
+// @example
+// .bs-menu {
+//   @include scrollbar();
+// }
+//
+
+@mixin scrollbar ($track: $c-gray-lighter, $thumb: $c-gray) {
+  &::-webkit-scrollbar {
+    height: 6px; // for horizontal scrollbars
+    width: 6px;  // for vertical scrollbars
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $track;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $thumb;
+  }
+}

@@ -1,0 +1,29 @@
+//
+// SR-Only @mixin
+//
+// Visually hide content keeping markup readable for screen readers, robots
+//
+// Reference:
+// https://a11yproject.com/posts/how-to-hide-content/
+//
+// @example
+// .element-visible-only-for-screen-readers {
+//   @include sr-only();
+// }
+//
+// Lint options:
+// sass-lint:disable no-important
+// sass-lint:disable no-duplicate-properties
+//
+@mixin sr-only() {
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute !important;
+  width: 1px;
+}
+
+.bs-sr-only {
+  @include sr-only();
+}
