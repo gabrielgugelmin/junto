@@ -11,12 +11,12 @@ server.use(jsonServer.defaults());
 const ACCESS_TOKEN = '23456789';
 const expiresIn = '1h';
 
-// Create a token from a payload 
+// Create a token from a payload
 function createToken(payload){
   return jwt.sign(payload, ACCESS_TOKEN, {expiresIn})
 }
 
-// Verify the token 
+// Verify the token
 function verifyToken(token){
   return  jwt.verify(token, ACCESS_TOKEN, (err, decode) => decode !== undefined ?  decode : err)
 }
@@ -27,6 +27,7 @@ function isAuthenticated({email, password}){
 }
 
 server.post('/auth/login', (req, res) => {
+  console.log(res);
   const {email, password} = req.body
   if (isAuthenticated({email, password}) === false) {
     const status = 401
@@ -54,7 +55,11 @@ server.use(/^(?!\/auth).*$/,  (req, res, next) => {
     res.status(status).json({status, message})
   }
 })
-
+router.render = (req, res) => {
+  res.jsonp({
+    body: res.locals.data
+  })
+}
 server.use(router);
 
 server.listen(3001, () => {

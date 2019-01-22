@@ -1,5 +1,3 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## Teste Junto Seguros
 
 Teste front-end realizado para a Junto Seguros.

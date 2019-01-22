@@ -2,15 +2,11 @@
   "quote": [
     {
       "id": 12345678000123,
-      "cnpj": "12345678/000123",
-      "email": "bruno@email.com",
-      "password": "bruno"
+      "cnpj": "12345678/000123"
     },
     {
       "id": 87654321321000,
-      "cnpj": "87654321/321000",
-      "email": "nilson@email.com",
-      "password": "nilson"
+      "cnpj": "87654321/321000"
     }
   ],
   "users": [

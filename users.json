@@ -12,12 +12,5 @@
       "email": "nilson@email.com",
       "password": "nilson"
     }
-  ],
-  "quote": [
-    {
-      "id": 80,
-      "cnpj": "12345678/000123",
-      "photo": "https://randomuser.me/api/portraits/women/8.jpg"
-    }
   ]
 }
