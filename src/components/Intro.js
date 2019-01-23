@@ -15,10 +15,12 @@ const Intro = (props) => {
           <p className="intro__subtitle">{subtitle}</p>
         </div>
 
-        <Link to={href} className="button button--white">
-          {label}
-          <MdArrowForward />
-        </Link>
+        <footer className="intro__footer">
+          <Link to={href} className="button button--white">
+            {label}
+            <MdArrowForward />
+          </Link>
+        </footer>
       </div>
     </div>
   )

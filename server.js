@@ -55,11 +55,7 @@ server.use(/^(?!\/auth).*$/,  (req, res, next) => {
     res.status(status).json({status, message})
   }
 })
-router.render = (req, res) => {
-  res.jsonp({
-    body: res.locals.data
-  })
-}
+
 server.use(router);
 
 server.listen(3001, () => {

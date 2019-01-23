@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
-import { MdCheckCircle, MdArrowForward } from 'react-icons/md';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import '../styles/main.scss';
 import Intro from './Intro';
 import Section from './Section';
@@ -10,50 +9,48 @@ import Step from './Step';
 class App extends Component {
 
   state = {
-    color: 'blue',
+    inputStatus: '',
+    data: {
+      id: "",
+      cnpj: "",
+      name: ""
+    }
   }
 
   handleSearch = (event) => {
     let cnpj = event.target.value;
     let c = cnpj.replace(new RegExp(/[.,-/\s]/g), '');
-    console.log(c.length, c);
     if (c.length === 14) {
       this.getCompany(c);
     }
   }
 
   getCompany = (value) => {
-    // Set up our HTTP request
-    var xhr = new XMLHttpRequest();
-
-    // Setup our listener to process completed requests
-    xhr.onload = () => {
-      console.log(xhr.status);
-
-      // Process our return data
-      if (xhr.status >= 200 && xhr.status < 300) {
-        // What do when the request is successful
-        // console.log('success!', xhr);
-        // console.log(JSON.parse(xhr.responseText));
-        console.log('opa', xhr.responseText);
-      } else if (xhr.status === 404) {
-        console.log('404 error');
-      } else {
-        // What do when the request fails
-        console.log('The request failed!');
-      }
-
-      // Code that should run regardless of the request status
-      console.log('This always runs...');
-    };
-
-
-    // Create and send a GET request
-    // The first argument is the post type (GET, POST, PUT, DELETE, etc.)
-    // The second argument is the endpoint URL
-    xhr.open('GET', 'http://localhost:3001/quote/' + value);
-    xhr.setRequestHeader('Authorization','Bearer ' + 23456789);
-    xhr.send();
+    fetch(`http://localhost:3001/quote/${value}`, {
+      method: 'GET',
+      headers: new Headers({
+        'Authorization': 'Bearer 23456789',
+        'Accept': 'application/json'
+      })
+    })
+      .then(response => {
+        if(response.ok) {
+          this.setState({
+            inputStatus: 'input--success'
+          })
+          return response.json();
+        } else {
+          this.setState({
+            inputStatus: 'input--error'
+          })
+          return { name: "Empresa não encontrada" }
+        }
+      })
+      .then (json =>
+        this.setState({
+          data: json
+        })
+      )
   }
 
   render() {
@@ -88,11 +85,13 @@ class App extends Component {
                   title="Buscar por CNPJ ou empresa"
                 />
                 <Input
-                  type="text"
-                  name="cnpj"
+                  status={this.state.inputStatus}
                   label="CNPJ/Empresa"
+                  name="cnpj"
                   onChange={this.handleSearch}
+                  type="text"
                 />
+                <p className="intro__detail">{this.state.data.name}</p>
               </Section>
             )} />
           </Switch>

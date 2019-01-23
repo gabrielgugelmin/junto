@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { MdShowChart, MdCheckCircle, MdArrowForward } from 'react-icons/md';
+import { MdShowChart, MdArrowForward } from 'react-icons/md';
 
 const Section = (props) => {
   const { title, subtitle, username, photo } = props;
